@@ -2,7 +2,6 @@ package chat
 
 import (
 	"log"
-
 	"github.com/labstack/echo"
 	"github.com/gorilla/websocket"
 )
