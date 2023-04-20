@@ -33,6 +33,7 @@ func connect(dialector gorm.Dialector, count uint) {
 			count--
 			fmt.Printf("retry... count:%v\n", count)
 			connect(dialector, count)
+			
 			return
 		}
 		
