@@ -7,12 +7,11 @@ import (
 	"github.com/gorilla/websocket"
 )
 
+var clients = make(map[*websocket.Conn]bool)
 var upgrader = websocket.Upgrader{
 	ReadBufferSize:  1024,
 	WriteBufferSize: 1024,
 }
-
-var clients = make(map[*websocket.Conn]bool)
 
 func ChatHandler(c echo.Context) error {
 	conn, err := upgrader.Upgrade(c.Response(), c.Request(), nil)
