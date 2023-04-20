@@ -1,2 +1,2 @@
-# docker-echo-websocket-template-
+# docker-echo-websocket-template
 Echoでソケット通信を使用できるテンプレート。
