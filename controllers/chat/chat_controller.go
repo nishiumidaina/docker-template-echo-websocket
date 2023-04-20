@@ -1,4 +1,4 @@
-package websocket
+package chat
 
 import (
 	"log"
@@ -14,7 +14,7 @@ var upgrader = websocket.Upgrader{
 
 var clients = make(map[*websocket.Conn]bool)
 
-func WebsocketHandler(c echo.Context) error {
+func ChatHandler(c echo.Context) error {
 	conn, err := upgrader.Upgrade(c.Response(), c.Request(), nil)
 
 	if err != nil {

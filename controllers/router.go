@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"docker-echo-template/controllers/websocket"
+	"docker-echo-template/controllers/chat"
 
 	"github.com/labstack/echo"
 )
@@ -9,7 +9,7 @@ import (
 func Router() *echo.Echo {
 	e := echo.New()
 
-	e.GET("/websocket", websocket.WebsocketHandler)
+	e.GET("/chat", chat.ChatHandler)
 
 	e.Start(":8000")
 
