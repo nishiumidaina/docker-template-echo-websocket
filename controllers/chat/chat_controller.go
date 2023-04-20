@@ -16,7 +16,6 @@ var clients = make(map[*websocket.Conn]bool)
 
 func ChatHandler(c echo.Context) error {
 	conn, err := upgrader.Upgrade(c.Response(), c.Request(), nil)
-
 	if err != nil {
 		log.Println(err)
 		return err
