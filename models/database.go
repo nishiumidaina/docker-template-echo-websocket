@@ -18,7 +18,6 @@ func init() {
 	var path string = fmt.Sprintf("%s:%s@tcp(%s)/%s?charset=utf8&parseTime=true", user, password, host, name)
 	dialector := mysql.Open(path)
 	var err error
-
 	if Db, err = gorm.Open(dialector); err != nil {
 		connect(dialector, 100)
 	}
@@ -28,7 +27,6 @@ func init() {
 
 func connect(dialector gorm.Dialector, count uint) {
 	var err error
-
 	if Db, err = gorm.Open(dialector); err != nil {
 		if count > 1 {
 			time.Sleep(time.Second * 2)
