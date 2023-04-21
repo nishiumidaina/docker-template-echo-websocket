@@ -13,7 +13,7 @@ func TestChat(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(handleWebSocket))
 	defer server.Close()
 
-	url := "ws" + strings.TrimPrefix(server.URL, "http") + "/ws"
+	url := "ws" + strings.TrimPrefix(server.URL, "http") + "/open_chat"
 	ws, _, err := websocket.DefaultDialer.Dial(url, nil)
 	if err != nil {
 		t.Fatalf("Failed to dial WebSocket: %v", err)

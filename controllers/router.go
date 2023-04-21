@@ -9,7 +9,7 @@ import (
 func Router() *echo.Echo {
 	e := echo.New()
 
-	e.GET("/chat", chat.ChatHandler)
+	e.GET("/open_chat", chat.OpenChatHandler)
 
 	e.Start(":8000")
 

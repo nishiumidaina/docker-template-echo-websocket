@@ -12,7 +12,7 @@ var upgrader = websocket.Upgrader{
 	WriteBufferSize: 1024,
 }
 
-func ChatHandler(c echo.Context) error {
+func OpenChatHandler(c echo.Context) error {
 	conn, err := upgrader.Upgrade(c.Response(), c.Request(), nil)
 	if err != nil {
 		log.Println(err)
