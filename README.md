@@ -15,6 +15,7 @@ docker-echo-websocket-template
  |      └──Dockerfile
  ├──models
  |   └──databese.go(DBの接続設定)
+ ├──tests
  ├──.air.toml
  ├──.env
  ├──.env.example
