@@ -38,7 +38,6 @@ func TestChat(t *testing.T) {
 }
 
 func openChatHandle(w http.ResponseWriter, r *http.Request) {
-	// WebSocketのアップグレード
 	upgrader := websocket.Upgrader{}
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
