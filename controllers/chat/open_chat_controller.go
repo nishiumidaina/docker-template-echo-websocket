@@ -8,14 +8,14 @@ import (
 
 var (
 	clients = make(map[*websocket.Conn]bool)
-	upgrader = websocket.Upgrader{
+	openChatupgrader = websocket.Upgrader{
 		ReadBufferSize: 1024,
 		WriteBufferSize: 1024,
 	}
 )
 
 func OpenChatHandler(c echo.Context) error {
-	conn, err := upgrader.Upgrade(c.Response(), c.Request(), nil)
+	conn, err := openChatupgrader.Upgrade(c.Response(), c.Request(), nil)
 	if err != nil {
 		log.Println(err)
 		return err
