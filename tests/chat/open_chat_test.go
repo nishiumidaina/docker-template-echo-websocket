@@ -10,7 +10,7 @@ import (
 )
 
 func TestChat(t *testing.T) {
-	server := httptest.NewServer(http.HandlerFunc(handleWebSocket))
+	server := httptest.NewServer(http.HandlerFunc(openChatHandle))
 	defer server.Close()
 
 	url := "ws" + strings.TrimPrefix(server.URL, "http") + "/open_chat"
@@ -37,7 +37,7 @@ func TestChat(t *testing.T) {
 	}
 }
 
-func handleWebSocket(w http.ResponseWriter, r *http.Request) {
+func openChatHandle(w http.ResponseWriter, r *http.Request) {
 	// WebSocketのアップグレード
 	upgrader := websocket.Upgrader{}
 	conn, err := upgrader.Upgrade(w, r, nil)
